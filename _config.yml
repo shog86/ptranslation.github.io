@@ -1,7 +1,7 @@
 # Site settings
-title:熊猫译社 | Panda Translation Agency
+title: "熊猫译社 | Panda Translation Agency"
 email:
-description: 熊猫译社，高品质的文化翻译团队 - Panda Translation Agency, a leading cultural translation agency in China
+description: >"熊猫译社，高品质的文化翻译团队 - Panda Translation Agency, a leading cultural translation agency in China"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
