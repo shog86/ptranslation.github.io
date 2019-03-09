@@ -1,12 +1,10 @@
 # Site settings
-title:
+title:熊猫译社 | Panda Translation Agency
 email:
-description: > # this means to ignore newlines until "baseurl:"
+description: 熊猫译社，高品质的文化翻译团队 - Panda Translation Agency, a leading cultural translation agency in China
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
-twitter_username:
-github_username:
 
 # Build settings
 markdown: kramdown
