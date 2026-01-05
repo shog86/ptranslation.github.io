@@ -19,7 +19,7 @@
             <span data-lang-en>Services</span>
           </a>
           <a href="#portfolio" class="text-sm font-medium text-gray-700 hover:text-orange-500 transition-colors">
-            <span data-lang-zh>主要客户</span>
+            <span data-lang-zh>精选客户</span>
             <span data-lang-en>Clients</span>
           </a>
           <a href="#testimonials" class="text-sm font-medium text-gray-700 hover:text-orange-500 transition-colors">
@@ -71,7 +71,7 @@
       </a>
       <a href="#portfolio"
         class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-orange-500">
-        <span data-lang-zh>主要客户</span>
+        <span data-lang-zh>精选客户</span>
         <span data-lang-en>Clients</span>
       </a>
       <a href="#testimonials"
@@ -101,10 +101,20 @@
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (menuButton && mobileMenu) {
-      menuButton.addEventListener('click', function () {
+      menuButton.addEventListener('click', function (e) {
+        e.stopPropagation();
         const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
         this.setAttribute('aria-expanded', !isExpanded);
         mobileMenu.style.display = isExpanded ? 'none' : 'block';
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function (event) {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        if (isExpanded && !mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+          mobileMenu.style.display = 'none';
+          menuButton.setAttribute('aria-expanded', 'false');
+        }
       });
     }
 
