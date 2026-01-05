@@ -1,27 +1,29 @@
-<section id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">来信聊聊 ∣ Contact</h2>
-                <hr class="primary">
-                <p>在了解您的需求之后，我们将竭力为您提供满意的服务！</br>We strive to offer the best services to you!</p>
+<section id="contact" class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Unified Heading Format (Centered for this section) -->
+            <div class="mb-12 flex flex-col items-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    <span data-lang-zh>联系我们</span>
+                    <span data-lang-en>Contact Us</span>
+                </h2>
+                <div class="w-16 h-1 bg-orange-500"></div>
             </div>
-       <div class="col-lg-2 col-lg-offset-2 text-center">
-            <a href="">
-                
-                <p>{{ site.twitter_username }}</p>
-            </a>
-        </div>
-        <div class="col-lg-2 col-lg-offset-1 text-center">
-            <a href="mailto:{{ site.email }}">
-            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-            </a>
-        </div>
-        <div class="col-lg-2 col-lg-offset-1 text-center">
-            <a href="">
-            
-                <p>{{ site.github_username }}</p>
-            </a>
 
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+                <span data-lang-zh>在了解您的需求之后，我们将竭力为您提供满意的翻译与本地化服务！</span>
+                <span data-lang-en>We look forward to hearing from you and providing the best localization services
+                    tailored to your needs.</span>
+            </p>
+
+            <div class="flex justify-center">
+                <a href="mailto:{{ site.email }}?subject=翻译服务咨询"
+                    class="inline-flex items-center justify-center rounded-md bg-orange-500 px-10 py-4 text-lg font-bold text-white hover:bg-orange-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                    <i class="fa fa-envelope-o mr-3"></i>
+                    <span data-lang-zh>发送邮件咨询</span>
+                    <span data-lang-en>Get a Quote Now</span>
+                </a>
+            </div>
+        </div>
     </div>
 </section>

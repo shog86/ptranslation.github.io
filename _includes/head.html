@@ -1,37 +1,85 @@
-<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ page.description | default: site.description }}">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="熊猫译社，高品质的文化翻译团队 - Panda Translation Agency, a leading cultural translation agency in China" content="">
-    <meta name="熊猫译社" content="">
-    <meta name="baidu-site-verification" content="8CrZaeJ4SN" />
+<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-    <title>熊猫译社 ⎟ Panda Translation Agency</title>
+<!-- Tailwind CSS CDN for quick setup (Note: For production, use a build tool like Next.js/PostCSS) -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<!-- Fonts: Inter for English, Noto Sans SC for Chinese -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+<!-- Icons: Font Awesome (for existing icons) and Lucide (modern) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+<!-- Custom Styles (for Jekyll compatibility) -->
+<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/main.css" type="text/css">
+<style>
+/* Custom Fonts for i18n */
+body {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+}
+
+/* Custom Scrollbar for Testimonials */
+.testimonial-scroll-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+.testimonial-scroll-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+</style>
+
+<!-- Language detection (Basic Placeholder) -->
+<script>
+// i18n logic for single-page toggle
+function setLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('preferredLang', lang);
+
+    // Toggle display of language-specific elements
+    document.querySelectorAll('[data-lang-zh]').forEach(el => {
+        el.style.display = lang === 'zh' ? (el.tagName === 'SPAN' || el.tagName === 'I' || el.tagName === 'A' ? 'inline' : 'block') : 'none';
+    });
+    document.querySelectorAll('[data-lang-en]').forEach(el => {
+        el.style.display = lang === 'en' ? (el.tagName === 'SPAN' || el.tagName === 'I' || el.tagName === 'A' ? 'inline' : 'block') : 'none';
+    });
+
+    // Update active state on the switcher buttons
+    document.querySelectorAll('[data-lang-switch]').forEach(btn => {
+        if (btn.getAttribute('data-lang-switch') === lang) {
+            btn.classList.add('text-orange-600', 'font-bold');
+            btn.classList.remove('text-gray-700');
+        } else {
+            btn.classList.remove('text-orange-600', 'font-bold');
+            btn.classList.add('text-gray-700');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Check local storage
+    let savedLang = localStorage.getItem('preferredLang');
     
-{% if site.google_analytics and jekyll.environment == 'production' %}
-{% include analytics.html %}
-{% endif %}
+    // 2. Browser detection if no saved preference
+    if (!savedLang) {
+        savedLang = (navigator.language.startsWith('zh') || navigator.language.startsWith('cn')) ? 'zh' : 'en';
+    }
+    
+    // 3. Set initial language
+    setLang(savedLang);
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
+    // 4. Global event listener for language switch buttons (if any)
+    document.body.addEventListener('click', function(e) {
+        const btn = e.target.closest('[data-lang-switch]');
+        if (btn) {
+            setLang(btn.getAttribute('data-lang-switch'));
+        }
+    });
+});
+</script>

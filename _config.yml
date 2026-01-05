@@ -2,6 +2,7 @@
 title: "熊猫译社 | Panda Translation Agency"
 email: info@ptranslation.net
 description: >
+  高品质的文化翻译团队 | A leading cultural translation agency in China.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
@@ -10,3 +11,13 @@ google_analytics: G-0XP1XCBJKZ
 
 # Build settings
 markdown: kramdown
+
+# Language settings
+lang: "zh-CN"
+
+# Language switcher
+languages:
+  - code: "zh"
+    name: "中文"
+  - code: "en"
+    name: "EN"

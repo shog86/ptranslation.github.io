@@ -1,34 +1,122 @@
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">熊猫译社 ∣ Panda Translation</a>
+<nav class="fixed top-0 z-50 w-full border-b border-gray-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <a href="{{ site.baseurl }}/" class="flex items-center">
+        <img src="{{ site.baseurl }}/PTranslation_Logo removebg-preview_副本.png" alt="{{ site.title }}"
+          class="h-10 w-auto">
+      </a>
+
+      <!-- Desktop Menu & i18n -->
+      <div class="hidden md:flex md:items-center md:space-x-8">
+        <div class="flex space-x-6">
+          <a href="#about" class="text-sm font-medium text-gray-700 hover:text-orange-500 transition-colors">
+            <span data-lang-zh>关于我们</span>
+            <span data-lang-en>About</span>
+          </a>
+          <a href="#services" class="text-sm font-medium text-gray-700 hover:text-orange-500 transition-colors">
+            <span data-lang-zh>我们的优势</span>
+            <span data-lang-en>Services</span>
+          </a>
+          <a href="#portfolio" class="text-sm font-medium text-gray-700 hover:text-orange-500 transition-colors">
+            <span data-lang-zh>主要客户</span>
+            <span data-lang-en>Clients</span>
+          </a>
+          <a href="#testimonials" class="text-sm font-medium text-gray-700 hover:text-orange-500 transition-colors">
+            <span data-lang-zh>客户评价</span>
+            <span data-lang-en>Testimonials</span>
+          </a>
+          <a href="#contact" class="text-sm font-medium text-gray-700 hover:text-orange-500 transition-colors">
+            <span data-lang-zh>联系我们</span>
+            <span data-lang-en>Contact</span>
+          </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="page-scroll" href="#about">关于我们 ∣ About</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#services">我们的优势 ∣ Why Us</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#portfolio">主要客户及项目 ∣ Selected Clients</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">业务咨询 ∣ Contact</a>
-                </li>
-            </ul>
+        <!-- Language Switcher -->
+        <div class="pl-6 border-l border-gray-200">
+          <div class="flex items-center space-x-3">
+            <button data-lang-switch="zh" class="text-xs font-bold transition-colors">ZH</button>
+            <span class="text-gray-300">|</span>
+            <button data-lang-switch="en" class="text-xs font-bold transition-colors">EN</button>
+          </div>
         </div>
-        <!-- /.navbar-collapse -->
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" type="button"
+        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500 md:hidden"
+        aria-controls="mobile-menu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <!-- Icon: Menu -->
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
-    <!-- /.container-fluid -->
+  </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div class="md:hidden" id="mobile-menu" style="display: none;">
+    <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+      <a href="#about"
+        class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-orange-500">
+        <span data-lang-zh>关于我们</span>
+        <span data-lang-en>About</span>
+      </a>
+      <a href="#services"
+        class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-orange-500">
+        <span data-lang-zh>我们的优势</span>
+        <span data-lang-en>Services</span>
+      </a>
+      <a href="#portfolio"
+        class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-orange-500">
+        <span data-lang-zh>主要客户</span>
+        <span data-lang-en>Clients</span>
+      </a>
+      <a href="#testimonials"
+        class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-orange-500">
+        <span data-lang-zh>客户评价</span>
+        <span data-lang-en>Testimonials</span>
+      </a>
+      <a href="#contact"
+        class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-orange-500">
+        <span data-lang-zh>联系我们</span>
+        <span data-lang-en>Contact</span>
+      </a>
+      <div class="pt-4 border-t border-gray-200">
+        <div class="flex items-center space-x-4 px-3 py-2 text-base font-semibold">
+          <button data-lang-switch="zh" class="transition-colors">中文</button>
+          <span class="text-gray-300">|</span>
+          <button data-lang-switch="en" class="transition-colors">English</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', function () {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.style.display = isExpanded ? 'none' : 'block';
+      });
+    }
+
+    // Smooth scroll and close mobile menu
+    document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        // Small delay to allow menu to close before scroll starts
+        setTimeout(() => {
+          mobileMenu.style.display = 'none';
+          menuButton.setAttribute('aria-expanded', 'false');
+        }, 100);
+      });
+    });
+  });
+</script>
