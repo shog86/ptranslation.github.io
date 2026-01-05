@@ -17,7 +17,7 @@
             </p>
 
             <div class="flex justify-center">
-                <a href="mailto:{{ site.email }}?subject=翻译服务咨询"
+                <a href="mailto:{{ site.email }}?subject=翻译服务咨询" id="cta-email-btn"
                     class="inline-flex items-center justify-center rounded-md bg-orange-500 px-10 py-4 text-lg font-bold text-white hover:bg-orange-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 transform hover:scale-105 shadow-xl">
                     <i class="fa fa-envelope-o mr-3"></i>
                     <span data-lang-zh>发送邮件咨询</span>
@@ -27,3 +27,38 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('cta-email-btn').addEventListener('click', function (e) {
+        const email = "{{ site.email }}";
+        const btn = this;
+        const zhSpan = btn.querySelector('[data-lang-zh]');
+        const enSpan = btn.querySelector('[data-lang-en]');
+        const icon = btn.querySelector('i');
+
+        // Copy to clipboard
+        if (navigator.clipboard && window.isSecureContext) {
+            e.preventDefault();
+            navigator.clipboard.writeText(email).then(() => {
+                const oldZh = zhSpan.textContent;
+                const oldEn = enSpan.textContent;
+                const oldIconClass = icon.className;
+
+                zhSpan.textContent = '已复制邮箱';
+                enSpan.textContent = 'Email Copied';
+                icon.className = 'fa fa-check mr-3';
+
+                setTimeout(() => {
+                    zhSpan.textContent = oldZh;
+                    enSpan.textContent = oldEn;
+                    icon.className = oldIconClass;
+                    // Trigger mailto after feedback
+                    window.location.href = btn.href;
+                }, 1500);
+            }).catch(() => {
+                // Fallback to default if copy fails
+                window.location.href = btn.href;
+            });
+        }
+    });
+</script>
