@@ -1,0 +1,49 @@
+# Robots.txt for Panda Translation Agency
+
+# Allow all regular search crawlers
+User-agent: *
+Allow: /
+
+# ------------------------------
+# AI Search Crawlers (Allow)
+# These crawlers power AI search features and help your content appear in AI search results
+# ------------------------------
+
+# OpenAI Search Bot (ChatGPT Search)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Claude Search Bot
+User-agent: Claude-SearchBot
+Allow: /
+
+# Perplexity Search
+User-agent: Perplexity-User
+Allow: /
+
+# Google-Extended (Google's AI features)
+User-agent: Google-Extended
+Allow: /
+
+# ------------------------------
+# AI Training Crawlers (Disallow - optional)
+# These crawlers are used for training AI models
+# Adjust based on your preference
+# ------------------------------
+
+# OpenAI GPTBot (for training)
+User-agent: GPTBot
+Disallow: /
+
+# Anthropic ClaudeBot (for training)
+User-agent: ClaudeBot
+Disallow: /
+
+# Common Crawl
+User-agent: CCBot
+Disallow: /
+
+# ------------------------------
+# Sitemap
+# ------------------------------
+Sitemap: https://ptranslation.net/sitemap.xml
