@@ -1,0 +1,33 @@
+# 熊猫译社 | Panda Translation Agency
+
+## 网站概述
+熊猫译社是一家专业的文化创意内容本地化服务提供商，成立于2014年，总部位于中国北京。
+
+## 核心服务
+- 新闻翻译
+- 游戏及互联网产品本地化
+- 剧本及字幕翻译
+- 文化论文翻译
+- 营销材料翻译
+- 合同翻译
+
+## 服务语种
+英语、日语、法语、德语、繁体中文
+
+## 关键页面
+- 首页：https://ptranslation.net/
+- 关于我们：https://ptranslation.net/#about
+- 服务项目：https://ptranslation.net/#services
+- 作品集：https://ptranslation.net/#portfolio
+- 客户评价：https://ptranslation.net/#testimonials
+- 联系我们：https://ptranslation.net/#contact
+
+## 作者信息
+- 创始人：葛仲君
+- 微信公众号：产品本地化蓝皮书
+- 邮箱：info@ptranslation.net
+- 背景：曾担任 Airbnb 本地化经理，产品本地化最佳实践布道者
+
+## 语言支持
+- 简体中文 (zh-CN)
+- 英语 (en)
